@@ -1,17 +1,13 @@
-import { supabase } from '../supabase';
+import { useUser } from '../hooks/useUser';
 
 export default function About() {
+  const { signOut } = useUser();
+  
   return (
     <div>
       About
       <br />
-      <button
-        onClick={async () => {
-          await supabase.auth.signOut();
-        }}
-      >
-        Login con GitHub
-      </button>
+      <button onClick={signOut}>Login con GitHub</button>
     </div>
   );
 }
