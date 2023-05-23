@@ -7,5 +7,5 @@ export default function Home() {
     return <div>Cargando...</div>;
   }
 
-  return <div>Home</div>;
+  return <main className='min-h-screen bg-russianViolet'>Home</main>;
 }
