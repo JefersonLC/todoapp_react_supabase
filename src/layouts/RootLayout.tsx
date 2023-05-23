@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 import { supabase } from '../supabase';
 import { useUser } from '../hooks/useUser';
-import Header from '../components/Header';
+import Aside from '../components/aside/Aside';
 
 export default function RootLayout() {
   const navigate = useNavigate();
@@ -23,8 +23,11 @@ export default function RootLayout() {
 
   return (
     <>
-      <Header />
+      <header className='fixed top-0 left-0 right-0 gap-6 py-4 px-6 bg-russianViolet text-honeydew'>
+        <h3 className='text-xl'>ToDoApp</h3>
+      </header>
       <Outlet />
+      <Aside />
     </>
   );
 }
