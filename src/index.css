@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+  font-family: 'chocopy';
+  src: url('./fonts/Chocopy.ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'wix';
+  src: url('./fonts/Wix.ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
