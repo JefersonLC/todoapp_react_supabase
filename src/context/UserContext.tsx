@@ -15,15 +15,31 @@ export default function UserContextProvider({
     setUserSession(session);
   };
 
-  const sigInWithGitHub = async () => {
+  const signInWithGitHub = async () => {
     await supabase.auth.signInWithOAuth({
       provider: 'github',
     });
   };
 
+  const signInWithGoogle = async () => {
+    await supabase.auth.signInWithOAuth({
+      provider: 'google',
+    });
+  };
+
+  const signOut = async () => {
+    await supabase.auth.signOut();
+  };
+
   return (
     <UserContext.Provider
-      value={{ setSession, sigInWithGitHub, session: userSession }}
+      value={{
+        setSession,
+        signInWithGitHub,
+        signInWithGoogle,
+        signOut,
+        session: userSession,
+      }}
     >
       {children}
     </UserContext.Provider>
