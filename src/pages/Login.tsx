@@ -24,11 +24,11 @@ export default function Login() {
   ];
 
   return (
-    <div className='min-h-screen relative flex items-center justify-center bg-russianViolet'>
+    <div className='min-h-screen relative flex items-center justify-center bg-slate-700'>
       <div className='absolute top-0 w-full'>
         <HeaderWave />
       </div>
-      <section className='mx-6 py-8 gap-24 max-w-[342px] bg-honeydew md:max-w-min z-10'>
+      <section className='mx-6 py-8 gap-24 max-w-[342px] bg-slate-800 md:max-w-min z-10 text-white'>
         <div className='px-6 md:px-8'>
           <h2 className='font-[chocopy] text-4xl text-center md:text-5xl'>
             ToDoApp
