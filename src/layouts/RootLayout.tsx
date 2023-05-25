@@ -23,7 +23,7 @@ export default function RootLayout() {
 
   return (
     <>
-      <header className='fixed top-0 left-0 right-0 gap-6 py-4 px-6 bg-russianViolet text-honeydew'>
+      <header className='fixed top-0 left-0 right-0 gap-6 py-4 px-6 text-white'>
         <h3 className='text-xl'>ToDoApp</h3>
       </header>
       <Outlet />
