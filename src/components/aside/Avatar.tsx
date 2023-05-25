@@ -9,7 +9,7 @@ export default function Avatar() {
   }
 
   return (
-    <button className='rounded-full ring-4 hover:ring-honeydew focus:ring-honeydew'>
+    <button className='rounded-full ring-4 text-white hover:ring-teal-400 focus:ring-teal-400'>
       <img
         src={session.user.user_metadata.avatar_url}
         className='w-8 h-8 transition rounded-full'
