@@ -5,7 +5,7 @@ export default function GoogleIcon() {
       height={30}
       xmlns='http://www.w3.org/2000/svg'
       viewBox='0 0 488 512'
-      className='fill-honeydew'
+      className='fill-white'
     >
       <path
         d='M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8

@@ -5,7 +5,7 @@ export default function GitHubIcon() {
       height={30}
       xmlns='http://www.w3.org/2000/svg'
       viewBox='0 0 496 512'
-      className='fill-honeydew'
+      className='fill-white'
     >
       <path
         d='M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6
