@@ -1,7 +1,6 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import RootLayout from './layouts/RootLayout';
 import Home from './pages/Home';
-import About from './pages/About';
 import Login from './pages/Login';
 import NotFound from './pages/NotFound';
 import UserContextProvider from './context/UserContext';
@@ -14,10 +13,6 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
-      },
-      {
-        path: '/about',
-        element: <About />,
       },
     ],
   },
