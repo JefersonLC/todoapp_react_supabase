@@ -2,7 +2,7 @@ export default function HeaderWave() {
   return (
     <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'>
       <path
-        fill='#573280'
+        fill='#0f172a'
         fillOpacity='0.7'
         d='M0,160L48,154.7C96,149,192,139,288,160C384,181,480,
         235,576,256C672,277,768,267,864,234.7C960,203,1056,149,

@@ -2,7 +2,7 @@ export default function FooterWave() {
   return (
     <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'>
       <path
-        fill='#573280'
+        fill='#0f172a'
         fillOpacity='0.5'
         d='M0,256L48,250.7C96,245,192,235,288,197.3C384,160,
         480,96,576,80C672,64,768,96,864,144C960,192,1056,256,
