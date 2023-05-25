@@ -18,17 +18,17 @@ export default function AuthButton({
   action,
 }: AuthButtonProps) {
   const buttonStyle: ButtonStyles = {
-    github:
-      'bg-[#000] text-honeydew hover:bg-[#fff] hover:text-[#000] [&>svg]:hover:fill-[#000]',
-    google:
-      'bg-[#ea4335] text-honeydew hover:bg-[#fff] hover:text-[#ea4335] [&>svg]:hover:fill-[#ea4335]',
+    github: `bg-black text-honeydew hover:bg-white
+      hover:text-black [&>svg]:hover:fill-black`,
+    google: `bg-[#ea4335] text-honeydew hover:bg-white
+      hover:text-[#ea4335] [&>svg]:hover:fill-[#ea4335]`,
   };
 
   return (
     <button
       onClick={action}
-      className={`flex gap-4 items-center justify-center py-2 px-4 rounded-sm
-       ${buttonStyle[provider]}`}
+      className={`flex gap-4 items-center justify-center py-2 px-4 
+      rounded-sm transition-all ${buttonStyle[provider]}`}
     >
       {children}
       {icon}
