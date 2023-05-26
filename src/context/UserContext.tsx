@@ -39,6 +39,16 @@ export default function UserContextProvider({
     return { data, error, status };
   };
 
+  const getTask = async (id: number, uuid: string) => {
+    const { data, error, status } = await supabase
+      .from('tasks')
+      .select('*')
+      .eq('user_id', uuid)
+      .eq('id', id)
+      .maybeSingle();
+    return { data, error, status };
+  };
+
   return (
     <UserContext.Provider
       value={{
@@ -47,6 +57,7 @@ export default function UserContextProvider({
         signInWithGoogle,
         signOut,
         getTasks,
+        getTask,
         session: userSession,
       }}
     >
