@@ -11,16 +11,26 @@ export interface Task {
   limit_date: string;
 }
 
+interface Response {
+  error: PostgrestError | null;
+  status: number;
+}
+
+interface TasksResponse extends Response {
+  data: Task[] | null;
+}
+
+interface TaskResponse extends Response {
+  data: Task | null;
+}
+
 interface Context {
   setSession: (session: Session) => void;
   signInWithGitHub: () => Promise<void>;
   signInWithGoogle: () => Promise<void>;
   signOut: () => Promise<void>;
-  getTasks: (uuid: string) => Promise<{
-    data: Task[] | null;
-    error: PostgrestError | null;
-    status: number;
-  }>;
+  getTasks: (uuid: string) => Promise<TasksResponse>;
+  getTask: (id: number, uuid: string) => Promise<TaskResponse>;
   session: Session;
 }
 
