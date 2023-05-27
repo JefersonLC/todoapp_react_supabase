@@ -6,7 +6,7 @@ import AsideLink from './AsideLink';
 
 export default function Aside() {
   return (
-    <aside className='fixed top-4 z-20 flex justify-end p-2 right-4'>
+    <aside className='fixed top-[6px] z-20 flex justify-end p-2 right-4'>
       <nav className='flex flex-col items-end right-4 top-4 gap-y-4'>
         <div className='flex items-center'>
           <div className='relative group text-[10px]'>
