@@ -3,6 +3,8 @@ import RootLayout from './layouts/RootLayout';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import NotFound from './pages/NotFound';
+import UpdateTask from './pages/UpdateTask';
+import NewTask from './pages/NewTask';
 import UserContextProvider from './context/UserContext';
 
 const router = createBrowserRouter([
@@ -14,6 +16,14 @@ const router = createBrowserRouter([
         index: true,
         element: <Home />,
       },
+      {
+        path: '/update/:id',
+        element: <UpdateTask />
+      },
+      {
+        path: '/add',
+        element: <NewTask />
+      }
     ],
   },
   {
