@@ -7,11 +7,11 @@ export default function TasksError() {
         </h3>
       </div>
       <div className='text-lg'>
-        <p>There was an error during the process</p>
+        <p>Hubo un error durante el proceso</p>
       </div>
       <div className='mt-4 text-sm'>
         <p>
-          Please try again later <span className='text-teal-400'>;)</span>
+          Inténtelo más tarde <span className='text-teal-400'>;)</span>
         </p>
       </div>
     </div>
