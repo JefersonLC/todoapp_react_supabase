@@ -19,12 +19,12 @@ export default function Home() {
       setLoading(true);
       if (session) {
         const uuid = session.user.id;
-        const response = await getTasks(uuid);
-    
-        if (response.error) {
-          setError(response.error);
+        const { error, data } = await getTasks(uuid);
+
+        if (error) {
+          setError(error);
         } else {
-          setTasks(response.data);
+          setTasks(data);
         }
       }
       setLoading(false);
@@ -36,23 +36,24 @@ export default function Home() {
   }
 
   return (
-    <main className='min-h-screen pt-20 px-5 bg-slate-700'>
-      <div className='mt-6 mb-2'>
-        <h4 className='text-xl text-white'>Tasks list:</h4>
+    <main className='min-h-screen pt-20 px-5 sm:px-20 md:px-36 lg:px-60 xl:px-96 bg-slate-700'>
+      <div className='mt-6 mb-2 2xl:mx-56'>
+        <h4 className='text-xl text-white'>Lista de tareas:</h4>
       </div>
       {
-        loading
-          ? <LoadingTaks />
-          : error
-              ? <TasksError />
-              : (
-                <div className='mt-5 flex flex-col gap-4'>
-                  {tasks?.map((task) => (
-                    <TaskCard key={task.id} task={task} />
-                  ))}
-                </div>
-              )
+        loading 
+          ? <LoadingTaks /> 
+          : error 
+            ? <TasksError />
+            : (
+              <div className='mt-5 flex flex-col gap-4 2xl:mx-56'>
+                {tasks?.map((task, index) => (
+                  <TaskCard key={task.id} index={index} task={task} />
+                ))}
+              </div>
+            )
       }
+
     </main>
   );
 }
