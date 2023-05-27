@@ -1,25 +1,23 @@
 import { useUser } from '../../hooks/useUser';
-import TextSkeleton from '../skeletons/TextSkeleton';
+import UserInfoSkeleton from '../skeletons/UserInfoSkeleton';
 
 export default function UserInfo() {
   const { session } = useUser();
 
   return (
-    <div className='px-4 py-3'>
-      <span className='block text-sm'>
+    <div className='px-4 py-3 text-sm'>
         {
           session
-            ? session.user.user_metadata.full_name
-            : <TextSkeleton length='50' />
+            ? (
+              <>
+                <p>{session.user.user_metadata.full_name}</p>
+                <hr className='my-2'/>
+                <p>{session.user.email}</p>
+              </>
+            )
+            : <UserInfoSkeleton />
         }
-      </span>
-      <span className='block text-sm truncate'>
-        {
-          session
-            ? session.user.email
-            : <TextSkeleton length='100' />
-        }
-      </span>
+
     </div>
   );
 }
