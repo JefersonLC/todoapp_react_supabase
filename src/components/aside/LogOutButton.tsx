@@ -9,7 +9,7 @@ export default function LogOutButton() {
       className={`flex w-full px-4 py-2 text-sm transition border-teal-400
       hover:bg-teal-400 hover:text-black`}
     >
-      Logout
+      Cerrar Sesión
     </button>
   );
 }
