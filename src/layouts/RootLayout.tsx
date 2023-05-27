@@ -28,6 +28,9 @@ export default function RootLayout() {
       </header>
       <Outlet />
       <Aside />
+      <footer>
+        Pie de página
+      </footer>
     </>
   );
 }
