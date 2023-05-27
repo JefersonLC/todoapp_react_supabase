@@ -1,7 +1,8 @@
+import { links } from '../../utils/links';
 import Avatar from './Avatar';
-import ReportIcon from '../icons/ReportIcon';
 import UserInfo from './UserInfo';
 import LogOutButton from './LogOutButton';
+import AsideLink from './AsideLink';
 
 export default function Aside() {
   return (
@@ -20,21 +21,17 @@ export default function Aside() {
             </div>
           </div>
         </div>
-        <div className='flex flex-col items-end pr-1 gap-y-4'>
-          <a
-            href='https://github.com/JefersonLC/todoapp_react_supabase/issues'
-            target='_blank'
-            className={`items-center justify-center text-md font-semibold
-            flex group text-white hover:text-teal-400 gap-x-2`}
-          >
-            <span
-              className={`transition-all translate-x-4 opacity-0 group-hover:opacity-100
-              group-hover:translate-x-0`}
+        <div className='hidden sm:flex flex-col items-end pr-1 gap-y-4'>
+          {links.map((link) => (
+            <AsideLink
+              key={link.children}
+              path={link.path}
+              target={link.target}
+              icon={<link.icon />}
             >
-              Report
-            </span>
-            <ReportIcon />
-          </a>
+              {link.children}
+            </AsideLink>
+          ))}
         </div>
       </nav>
     </aside>
