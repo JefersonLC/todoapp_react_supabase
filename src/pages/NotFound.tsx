@@ -6,10 +6,10 @@ export default function NotFound() {
   return (
     <div className='min-h-screen bg-slate-700 flex flex-col items-center justify-center text-center gap-4'>
       <div className='text-white px-2'>
-        <h3 className='text-xl'>
+        <h3 className='text-xl md:text-2xl'>
           Error <span className='text-teal-400'>404</span>
         </h3>
-        <p className='mt-2'>
+        <p className='mt-2 md:text-xl'>
           La ruta espeficicada no existe:{' '}
           <span className='text-teal-400'>{pathname}</span>
         </p>
