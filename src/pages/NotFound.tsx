@@ -10,7 +10,7 @@ export default function NotFound() {
           Error <span className='text-teal-400'>404</span>
         </h3>
         <p className='mt-2 md:text-xl'>
-          La ruta espeficicada no existe:{' '}
+          La ruta especificada no existe:{' '}
           <span className='text-teal-400'>{pathname}</span>
         </p>
       </div>
