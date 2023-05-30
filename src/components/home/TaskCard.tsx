@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Task } from '../../hooks/useUser';
+import { Task } from '../../hooks/useUser.d';
 
 interface TaskCardProps {
   index: number;
