@@ -1,12 +1,11 @@
-import { Field, Formik, Form } from 'formik';
+import { Formik, Form } from 'formik';
 import { createTaskForm } from '../utils/validator';
+import { FormValues } from '../context/UserContext';
+import { useUser } from '../hooks/useUser';
+import FormGroup from '../components/add/FormGroup';
 
 export default function NewTask() {
-  interface FormValues {
-    title: string;
-    description: string;
-    limit_date: string;
-  }
+  const { session, addTask } = useUser();
 
   const initialValues: FormValues = {
     title: '',
@@ -14,8 +13,27 @@ export default function NewTask() {
     limit_date: '',
   };
 
-  const handleSubmit = (values: FormValues) => {
-    console.log(values);
+  const formFields = [
+    {
+      type: 'text',
+      name: 'title',
+      placeholder: 'Título',
+    },
+    {
+      type: 'text',
+      name: 'description',
+      placeholder: 'Descripción',
+    },
+    {
+      type: 'date',
+      name: 'limit_date',
+    },
+  ];
+
+  const handleSubmit = async (values: FormValues) => {
+    const id = session.user.id;
+    const response = await addTask(values, id);
+    console.log(response);
   };
 
   return (
@@ -29,11 +47,21 @@ export default function NewTask() {
           validationSchema={createTaskForm}
           onSubmit={handleSubmit}
         >
-          <Form>
-            <Field type='text' name='title' placeholder='Título' />
-            <Field type='text' name='description' placeholder='Descripción' />
-            <Field type='date' name='limit_date' />
-            <button type='submit'>Agregar</button>
+          <Form className='px-4 py-6 bg-slate-900'>
+            {formFields.map((field) => (
+              <FormGroup
+                key={field.name}
+                name={field.name}
+                type={field.type}
+                placeholder={field.placeholder}
+              />
+            ))}
+            <button
+              className='bg-teal-400 p-2 rounded-sm hover:text-teal-400 hover:bg-slate-700'
+              type='submit'
+            >
+              Agregar
+            </button>
           </Form>
         </Formik>
       </div>
