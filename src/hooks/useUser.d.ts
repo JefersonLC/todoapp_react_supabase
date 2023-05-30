@@ -14,12 +14,8 @@ export interface Task {
   limit_date: string;
 }
 
-export interface AddResponse {
-  status: string;
+export interface AddResponse extends Response {
   statusText: string;
-  error: {
-    message: PostgrestError | null;
-  };
 }
 
 export interface TasksResponse extends Response {
