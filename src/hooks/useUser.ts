@@ -1,28 +1,7 @@
 import { useContext } from 'react';
-import { PostgrestError, Session } from '@supabase/supabase-js';
-import { UserContext } from '../context/UserContext';
-
-export interface Task {
-  id: number;
-  title: string;
-  description: string;
-  created_at: string;
-  user_id: string;
-  limit_date: string;
-}
-
-interface Response {
-  error: PostgrestError | null;
-  status: number;
-}
-
-interface TasksResponse extends Response {
-  data: Task[] | null;
-}
-
-interface TaskResponse extends Response {
-  data: Task | null;
-}
+import { FormValues, UserContext } from '../context/UserContext';
+import { TaskResponse, TasksResponse, AddResponse } from './useUser.d';
+import { Session } from '@supabase/supabase-js';
 
 interface Context {
   setSession: (session: Session) => void;
@@ -31,6 +10,7 @@ interface Context {
   signOut: () => Promise<void>;
   getTasks: (uuid: string) => Promise<TasksResponse>;
   getTask: (id: number, uuid: string) => Promise<TaskResponse>;
+  addTask: (values: FormValues, user_id: string) => Promise<AddResponse>;
   session: Session;
 }
 
