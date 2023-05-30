@@ -59,13 +59,7 @@ export default function UserContextProvider({
     const { status, statusText, error } = await supabase
       .from('tasks')
       .insert({ ...values, user_id });
-    return {
-      status,
-      statusText,
-      error: {
-        message: error?.message,
-      },
-    };
+    return { status, statusText, error };
   };
 
   return (
