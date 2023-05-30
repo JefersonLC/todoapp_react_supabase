@@ -24,7 +24,7 @@ export default function Modal({ error, show }: ModalProps) {
     : 'Éxito';
 
   const message = error
-    ? 'Ya hay una tarea con ese título'
+    ? 'Error al crear'
     : 'Se guardó la tarea correctamente';
 
   const icon = error 
