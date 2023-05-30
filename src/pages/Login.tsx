@@ -37,7 +37,7 @@ export default function Login() {
             Bienvenido a nuestra aplicación, donde tu productividad es nuestra
             prioridad. Convierte el caos en orden y deja que nuestro asistente
             te guíe en la administración de tus tareas. Mejora tu enfoque y
-            logra más en menos tiempo.
+            logra más en menos tiempo. BLA BLA BLA...
           </p>
         </div>
         <div className='mt-8 px-6 flex flex-col gap-4 items-center justify-center md:mt-10 md:px-8'>
