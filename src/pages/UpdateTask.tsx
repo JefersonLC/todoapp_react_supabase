@@ -3,7 +3,8 @@
 import { useEffect, useState } from 'react';
 import { PostgrestError } from '@supabase/supabase-js';
 import { useParams } from 'react-router-dom';
-import { Task, useUser } from '../hooks/useUser';
+import { useUser } from '../hooks/useUser';
+import { Task } from '../hooks/useUser.d';
 import SessionError from '../components/home/SessionError';
 import LoadingTaks from '../components/home/LoadingTaks';
 import TasksError from '../components/home/TasksError';
