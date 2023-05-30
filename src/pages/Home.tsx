@@ -37,7 +37,7 @@ export default function Home() {
   }
 
   return (
-    <main className='min-h-screen pt-20 px-5 sm:px-20 md:px-36 lg:px-60 xl:px-96 bg-slate-700'>
+    <main className='min-h-screen pt-20 pb-6 px-5 sm:px-20 md:px-36 lg:px-60 xl:px-96 bg-slate-700'>
       <div className='mt-6 mb-2 2xl:mx-56'>
         <h4 className='text-xl text-white'>Lista de tareas:</h4>
       </div>
