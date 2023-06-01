@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { Formik, Form, FormikHelpers } from 'formik';
-import { createTaskForm } from '../utils/validator';
+import { taskValidator } from '../utils/validator';
 import { FormValues } from '../context/UserContext';
 import { useUser } from '../hooks/useUser';
+import { formFields } from '../utils/fieds';
 import FormGroup from '../components/add/FormGroup';
 import Modal from '../components/modal/Modal';
 
@@ -16,23 +17,6 @@ export default function NewTask() {
     description: '',
     limit_date: '',
   };
-
-  const formFields = [
-    {
-      type: 'text',
-      name: 'title',
-      placeholder: 'Título',
-    },
-    {
-      type: 'text',
-      name: 'description',
-      placeholder: 'Descripción',
-    },
-    {
-      type: 'date',
-      name: 'limit_date',
-    },
-  ];
 
   const handleSubmit = async (
     values: FormValues,
@@ -63,7 +47,7 @@ export default function NewTask() {
         <div className='mt-5 flex flex-col gap-4 2xl:mx-56'>
           <Formik
             initialValues={initialValues}
-            validationSchema={createTaskForm}
+            validationSchema={taskValidator}
             onSubmit={handleSubmit}
           >
             {({ isSubmitting }) => (
