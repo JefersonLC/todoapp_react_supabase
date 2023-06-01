@@ -11,6 +11,7 @@ interface Context {
   getTasks: (uuid: string) => Promise<TasksResponse>;
   getTask: (id: number, uuid: string) => Promise<TaskResponse>;
   addTask: (values: FormValues, user_id: string) => Promise<AddResponse>;
+  updateTask: (id: number, values: FormValues) => Promise<AddResponse>;
   session: Session;
 }
 
