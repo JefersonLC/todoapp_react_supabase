@@ -1,6 +1,6 @@
 import * as Yup from 'yup';
 
-export const createTaskForm = Yup.object({
+export const taskValidator = Yup.object({
   title: Yup.string()
     .min(2, 'Muy corto')
     .required('Título obligatorio')
