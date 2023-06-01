@@ -5,9 +5,9 @@ import { supabase } from '../supabase';
 export const UserContext = createContext({});
 
 export interface FormValues {
-  title: string;
-  description: string;
-  limit_date: string;
+  title?: string;
+  description?: string;
+  limit_date?: string;
 }
 
 export default function UserContextProvider({
@@ -62,6 +62,14 @@ export default function UserContextProvider({
     return { status, statusText, error };
   };
 
+  const updateTask = async (id: number, values: FormValues) => {
+    const { status, statusText, error } = await supabase
+      .from('tasks')
+      .update(values)
+      .eq('id', id);
+    return { status, statusText, error };
+  };
+
   return (
     <UserContext.Provider
       value={{
@@ -72,6 +80,7 @@ export default function UserContextProvider({
         getTasks,
         getTask,
         addTask,
+        updateTask,
         session: userSession,
       }}
     >
